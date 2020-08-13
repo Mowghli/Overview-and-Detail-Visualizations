@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset="utf-8">
+	<title>Homework #5: Geospatial Visualization</title>
+  <style type="text/css">
+    
+
+    tootsieroll {fill: brown;}
+  .center {
+    text-align: center;
+    border: 3px solid black;
+}
+
+pp {
+  font-family: "Verdana", Times, Sans-serif;
+  text-align: left;
+  font-size: 15px;
+
+
+pb {
+  font-family: "Verdana", Times, Sans-serif;
+  text-align: left;
+  font-size: 20px;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+  </style>
+</head>
+
+
+<body>
+   
+ 	<script src="https://d3js.org/d3.v4.min.js"></script>	
+ 	<script src="d3.queue.js"></script>
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.js" charset="utf-8"></script>
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.min.js"></script>
+  
+  <script src="./scripts/mappo.js"></script>
+   <svg id="bardock"></svg>
+  <script src="./scripts/barro.js"></script>
+  <div class="center">
+<select id="selectButton"></select>
+<button id ="batata" type="button">Reset</button>
+</div>
+
+
+</p>
+<pp>
+<b><pb>Domain abstraction:</pb> </b> <br>
+Potential users of the API include humanitarian organizations who would want to compare the progress between two or more countries to determine the relative level of progress in the countries. Governments of different countries, and data scientists could also use the API for the same reasons. The general public can use it to understand the level of progress of their own countries, and students can use it for their school projects.
+
+</pp>
+</p>
+<pp>
+<b><pb>Data abstraction:</pb> </b> <br>
+The dataset being shown is a table. One table, "countries of the world.csv" (it's actually a processed version called "countries_processed.csv"). However, the visualizations focus on seven attributes of the datset (a small subset), namely the Birth Rates, the population, population density, surface area, the number of phones that the civilians carry, the amount of crops grown in the country, and the death rates. All visualized attributes are quantitative, but not ordered. I had to process the dataset only by changing the attribute names and dividing the population attribute by one million.
+</pp>
+</p>
+<pp>
+<b><pb>Task abstraction:</pb> </b> <br>
+The tasks are {Browse-Outlier} and {Compare-features}. In {Browse-Outlier}, the overview map can be used to identify countries that have a large amount of the given attribute, and this can be queried through the drop down menu to change the attribute. In {Compare-features}, the countries in the overview map can be compared to one another in terms of the given attributes, by clicking on them in the map. By changing the attributes through the drop-down menu, you can compare the features of the countries.
+
+</pp>
+</p>
+<pp>
+<b><pb>Visualization and Interaction abstraction:</pb> </b> <br>
+The two charts implemented are the Map chart (or chloropleth) and Horizontal Bar chart. The Map chart serves to provide an overview of the dataset: Countries are colored to show the amount of the given attribute, pretty much the same as a heatmap for different attributes. The heatmap can represent different attributes with the use of the provided dropdown menu, which serves as the filter (to filter the attributes). Clicking any of the countries in the map will change it's opacity, and you can see it (with it's represented attribute) in the bar chart. Clicking more countries will also add them to the bar chart, allowing you to compare the values between countries, for the given attribute. Clicking again on those countries in the map will remove them from the bar chart. If you change the attributes using the drop down menu, with the countries in the bar chart, their values will change based on the attribute chosen.
+If you lose track of the countries that you clicked on (some of them are small, so they're less visible), you can click on the reset button to remove all countries from the bar chart.
+
+In {Browse-Outlier}, the overview map can be used to identify countries that have a large amount of the given attribute, and this can be queried through the drop down menu to change the attribute. In {Compare-features}, the countries in the overview map can be compared to one another in terms of the given attributes, by clicking on them in the map. By changing the attributes through the drop-down menu, you can compare the features of the countries.
+
+I chose to implement the map, because it seemed obvious to implement it, considering the fact that the dataset that I have to visualize is based on countries in the world. Including all or many attributes at once was not useful, as I could instead make a heatmap to compare the countries in terms of one feature. So I did that, and made a drop down menu, so that the user can view the heatmaps for different attributes. 
+
+I implemented a bar chart to compare the features between countries, because I do not know what else I can visualize any details of. I don't know of any methods with which I could visualize all attributes of one selected country. Comparisons of features between countries would require techniques like bar chart, pie chart or scatter plot, but scatter plots and pie charts do not clearly show the countries and their features well, and comparisons between countries will not be as clear as in a bar chart. I have also provided the option of removing countries in the bar chart by clicking them in the map, or removing them alltogether using the reset button.
+
+
+</pp>
+</p>
+<pp>
+<b><pb>Algorithm abstraction:</pb> </b> <br>
+My visualiations do not implement any complex algorithms
+
+</pp>
+
+</body>
